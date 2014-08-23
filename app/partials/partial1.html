@@ -1,0 +1,37 @@
+<!--p>This is the partial for view 1.</p-->
+
+<!--p>My Hero: {{cool}}</p-->
+<div class="jumbotron">
+  <h1>Mega Millions Lottery</h1>
+  <p class="lead">Press the "Play to Win" button for your winning numbers!</p>
+  <p><a class="btn btn-lg btn-success" role="button" ng-click="generateList()">Play to Win</a></p>
+
+  <div ng-show="list" class="row" >
+    <div class="col-md-3 panel-body" >
+    </div>
+    <div class="col-md-6">
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>#</th>
+            <th>#</th>
+            <th>#</th>
+            <th>#</th>
+            <th>Mega</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td ng-repeat="num in list">{{num}}</td> 
+            <td>{{mega}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-3 panel-body">      
+    </div>
+  </div>  
+
+</div>
+
