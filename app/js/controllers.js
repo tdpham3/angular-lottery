@@ -6,16 +6,8 @@ angular.module('myApp.controllers', [])
   .controller('MyCtrl1', ['$scope', 'randomNumber', function($scope, randomNumber) {
   	
   	$scope.generateList = function(){
-  		var list = [];
 
-        while (list.length < 5) {
-          var number = Math.ceil(Math.random() * 75);
-          if (list.indexOf(number) == -1){
-            list.push(number);
-          }
-        }
-
-      var result = randomNumber.generateNumbers();
+      var result = randomNumber.generateNumbers(75,15);
       $scope.list = result.numbers;
       $scope.mega = result.megaNumber;
 
@@ -28,12 +20,12 @@ angular.module('myApp.controllers', [])
   .factory('randomNumber', function() {
     
     return {
-      generateNumbers: function() {
+      generateNumbers: function(numbersMax, megaMax) {
         var list = [];
-        var mega = Math.ceil(Math.random() * 15);
+        var mega = Math.ceil(Math.random() * megaMax);
 
         while (list.length < 5) {
-          var number = Math.ceil(Math.random() * 75);
+          var number = Math.ceil(Math.random() * numbersMax);
           if (list.indexOf(number) == -1){
             list.push(number);
           }
