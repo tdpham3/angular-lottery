@@ -3,10 +3,9 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
-  	$scope.cool = "Peter Quill";
+  .controller('MyCtrl1', ['$scope', 'randomNumber', function($scope, randomNumber) {
+  	
   	$scope.generateList = function(){
-  		$scope.cool = "Gamora";
   		var list = [];
 
         while (list.length < 5) {
@@ -16,25 +15,31 @@ angular.module('myApp.controllers', [])
           }
         }
 
-        $scope.list = list.sort(function(a, b){return a-b});
-        $scope.mega = Math.ceil(Math.random() * 15);
+      var result = randomNumber.generateNumbers();
+      $scope.list = result.numbers;
+      $scope.mega = result.megaNumber;
+
   	}
-    /*$scope.generateList = function(){
-    var list = [];
-
-    while (list.length < 5)
-    {
-      var number = Math.ceil(Math.random() * 75);
-      if (list.indexOf(number) == -1){
-        list.push(number);
-      }
-    }
-
-    $scope.list = list.sort(function(a, b){return a-b});
-    $scope.mega = Math.ceil(Math.random() * 15);*/
-    //$scope.lotteryNumbers = {numbers: [1,2,3,4,5], mega: 6};
-    //}
+    
   }])
   .controller('MyCtrl2', ['$scope', function($scope) {
 
-  }]);
+  }])
+  .factory('randomNumber', function() {
+    
+    return {
+      generateNumbers: function() {
+        var list = [];
+        var mega = Math.ceil(Math.random() * 15);
+
+        while (list.length < 5) {
+          var number = Math.ceil(Math.random() * 75);
+          if (list.indexOf(number) == -1){
+            list.push(number);
+          }
+        }
+        list.sort(function(a, b){return a - b});
+        return {numbers: list, megaNumber: mega};   
+        }
+     };
+});
