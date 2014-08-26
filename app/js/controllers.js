@@ -5,9 +5,9 @@
 angular.module('myApp.controllers', [])
   .controller('MyCtrl1', ['$scope', 'randomNumber', function($scope, randomNumber) {
   	
-  	$scope.generateList = function(){
+  	$scope.generateList = function(numbers, mega){
 
-      var result = randomNumber.generateNumbers(75,15);
+      var result = randomNumber.generateNumbers(numbers, mega);
       $scope.list = result.numbers;
       $scope.mega = result.megaNumber;
 

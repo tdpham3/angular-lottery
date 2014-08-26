@@ -6,7 +6,9 @@ This project is a lottery generator web app. It supports only Mega Millions so f
 
 Generates Unique Numbers for Mega Millions lottery.
 
-Lottery Generation Logic is located in randomNumber factory
+Lottery Generation Logic is located in randomNumber factory.
+
+The behavior in the Lottery Generation Logic can accept parameters to alter the number range.
 
 ## To Do
 
