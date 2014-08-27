@@ -13,7 +13,7 @@
     <div class="col-md-3 panel-body" >
     </div>
     <div class="col-md-6">
-      <table class="table table-striped table-bordered">
+      <table class="table">
         <thead>
           <tr>
             <th>#</th>
@@ -26,8 +26,8 @@
         </thead>
         <tbody>
           <tr>
-            <td ng-repeat="num in list">{{num}}</td> 
-            <td>{{mega}}</td>
+            <td ng-repeat="num in list"><span class="label label-primary">{{num}}</span></td> 
+            <td><span class="label label-info">{{mega}}</span></td>
           </tr>
         </tbody>
       </table>

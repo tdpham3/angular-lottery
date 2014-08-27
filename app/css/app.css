@@ -49,3 +49,7 @@ body {
   padding: 14px 24px;
   font-size: 21px;
 }
+
+th {
+  text-align: center;
+}
